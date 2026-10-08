@@ -16,6 +16,7 @@ CONFIG = dict(
     whatsapp="5511974661004",          # DDI+DDD+número, só dígitos
     endereco="Rua Exemplo, 000 – Sala 00, Centro",
     cidade="São Paulo",
+    local="Localizados em São Paulo",
     cep="00000-000",
     horario="Segunda a sexta, das 9h às 18h",
     oab_sociedade="OAB/SP nº 00.000",  # registro da sociedade
@@ -97,7 +98,7 @@ def layout(fname, title, desc, body, hero="", ld=""):
 <div><h4>Navegação</h4><ul>{"".join(f'<li><a href="{h}">{t}</a></li>' for h,t in NAV)}</ul></div>
 <div><h4>Áreas</h4><ul>{footer_areas}</ul></div>
 <div><h4>Contato</h4><ul>
-<li>{C["cidade"]}</li>
+<li>{C["local"]}</li>
 <li><a href="tel:{C["tel_link"]}">{C["telefone"]}</a></li>
 <li><a href="mailto:{C["email"]}">{C["email"]}</a></li>
 <li><a href="{C["instagram"]}" rel="noopener" target="_blank">@advogadostrig</a></li></ul></div>
@@ -241,7 +242,7 @@ body = f'''<section><div class="wrap split" style="align-items:start">
 <label class="check" style="font-weight:400"><input type="checkbox" name="lgpd" required> <span>Li e concordo com a <a href="privacidade.html">Política de Privacidade</a> e autorizo o uso dos meus dados para retorno de contato.</span></label>
 <button class="btn" type="submit">Enviar mensagem</button><div id="form-msg" class="form-msg" role="status" aria-live="polite"></div></form></div>
 <div class="reveal"><div class="info">
-<div>{ico("pin")}<span><b>Endereço</b>{C["cidade"]}</span></div>
+<div>{ico("pin")}<span><b>Endereço</b>{C["local"]}</span></div>
 <div>{ico("phone")}<span><b>Telefone</b><a href="tel:{C["tel_link"]}">{C["telefone"]}</a></span></div>
 <div>{ico("mail")}<span><b>E-mail</b><a href="mailto:{C["email"]}">{C["email"]}</a></span></div>
 <div>{ico("clock")}<span><b>Horário</b>{C["horario"]}</span></div></div>
