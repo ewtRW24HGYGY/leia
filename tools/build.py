@@ -15,11 +15,11 @@ CONFIG = dict(
     tel_link="+5511974661004",
     whatsapp="5511974661004",          # DDI+DDD+número, só dígitos
     endereco="Rua Exemplo, 000 – Sala 00, Centro",
-    cidade="São Paulo – SP",
+    cidade="São Paulo",
     cep="00000-000",
     horario="Segunda a sexta, das 9h às 18h",
     oab_sociedade="OAB/SP nº 00.000",  # registro da sociedade
-    instagram="https://instagram.com/",
+    instagram="https://instagram.com/advogadostrig",
     linkedin="https://linkedin.com/",
 )
 C = CONFIG
@@ -59,7 +59,7 @@ def layout(fname, title, desc, body, hero="", ld=""):
         f'<li><a href="{h}"{" aria-current=\"page\"" if h==fname else ""}>{t}</a></li>' for h,t in NAV)
     url = f'{C["site"]}/{"" if fname=="index.html" else fname}'
     full_title = title if fname=="index.html" else f'{title} | {C["nome"]}'
-    org = f'''{{"@context":"https://schema.org","@type":"LegalService","name":"{C["nome"]}","url":"{C["site"]}","telephone":"{C["tel_link"]}","email":"{C["email"]}","address":{{"@type":"PostalAddress","streetAddress":"{C["endereco"]}","addressLocality":"{C["cidade"]}","postalCode":"{C["cep"]}","addressCountry":"BR"}},"openingHours":"Mo-Fr 09:00-18:00","areaServed":"BR"}}'''
+    org = f'''{{"@context":"https://schema.org","@type":"LegalService","name":"{C["nome"]}","url":"{C["site"]}","telephone":"{C["tel_link"]}","email":"{C["email"]}","address":{{"@type":"PostalAddress","addressLocality":"{C["cidade"]}","addressCountry":"BR"}},"openingHours":"Mo-Fr 09:00-18:00","areaServed":"BR"}}'''
     footer_areas = "".join(f'<li><a href="areas.html#{a[0]}">{a[2]}</a></li>' for a in AREAS[:6])
     return f'''<!doctype html>
 <html lang="pt-BR">
@@ -97,10 +97,10 @@ def layout(fname, title, desc, body, hero="", ld=""):
 <div><h4>Navegação</h4><ul>{"".join(f'<li><a href="{h}">{t}</a></li>' for h,t in NAV)}</ul></div>
 <div><h4>Áreas</h4><ul>{footer_areas}</ul></div>
 <div><h4>Contato</h4><ul>
-<li>{C["endereco"]}<br>{C["cidade"]} · CEP {C["cep"]}</li>
+<li>{C["cidade"]}</li>
 <li><a href="tel:{C["tel_link"]}">{C["telefone"]}</a></li>
 <li><a href="mailto:{C["email"]}">{C["email"]}</a></li>
-<li><a href="{C["instagram"]}" rel="noopener" target="_blank">Instagram</a> · <a href="{C["linkedin"]}" rel="noopener" target="_blank">LinkedIn</a></li></ul></div>
+<li><a href="{C["instagram"]}" rel="noopener" target="_blank">@advogadostrig</a></li></ul></div>
 </div>
 <p class="oab-note">Este site tem caráter exclusivamente informativo, nos termos do Provimento nº 205/2021 do Conselho Federal da OAB, e não constitui oferta de serviços, promessa de resultado ou aconselhamento jurídico. Resultados dependem das particularidades de cada caso.</p>
 <div class="legal"><span>© <span id="y">2026</span> {C["nome"]} · Sociedade de Advogados · {C["oab_sociedade"]}</span><span><a href="privacidade.html">Política de Privacidade</a></span></div>
@@ -241,7 +241,7 @@ body = f'''<section><div class="wrap split" style="align-items:start">
 <label class="check" style="font-weight:400"><input type="checkbox" name="lgpd" required> <span>Li e concordo com a <a href="privacidade.html">Política de Privacidade</a> e autorizo o uso dos meus dados para retorno de contato.</span></label>
 <button class="btn" type="submit">Enviar mensagem</button><div id="form-msg" class="form-msg" role="status" aria-live="polite"></div></form></div>
 <div class="reveal"><div class="info">
-<div>{ico("pin")}<span><b>Endereço</b>{C["endereco"]}<br>{C["cidade"]} – CEP {C["cep"]}</span></div>
+<div>{ico("pin")}<span><b>Endereço</b>{C["cidade"]}</span></div>
 <div>{ico("phone")}<span><b>Telefone</b><a href="tel:{C["tel_link"]}">{C["telefone"]}</a></span></div>
 <div>{ico("mail")}<span><b>E-mail</b><a href="mailto:{C["email"]}">{C["email"]}</a></span></div>
 <div>{ico("clock")}<span><b>Horário</b>{C["horario"]}</span></div></div>
