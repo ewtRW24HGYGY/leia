@@ -42,22 +42,12 @@ ICONS = {
 def ico(n): return f'<svg viewBox="0 0 24 24" aria-hidden="true">{ICONS[n]}</svg>'
 
 AREAS = [
- ("civil","scale","Direito Civil","Contratos, responsabilidade civil, indenizações e obrigações em geral.",
-  ["Elaboração e revisão de contratos","Responsabilidade civil e indenizações","Cobranças e execuções","Direito do consumidor","Usucapião e posse"]),
- ("empresarial","briefcase","Direito Empresarial","Assessoria jurídica preventiva e contenciosa para empresas e empreendedores.",
-  ["Constituição e alteração de sociedades","Contratos empresariais e societários","Recuperação judicial e falência","Propriedade intelectual e marcas","Compliance e governança"]),
- ("trabalhista","users","Direito Trabalhista","Atuação para empregadores e empregados, na consultoria e no contencioso.",
-  ["Reclamações trabalhistas","Consultoria preventiva para empresas","Acordos e rescisões","Assédio e danos morais","Cálculos e verbas rescisórias"]),
- ("familia","heart","Família e Sucessões","Atendimento sigiloso e humanizado nos momentos mais sensíveis.",
-  ["Divórcio, guarda e pensão alimentícia","União estável","Inventário e partilha","Testamentos e planejamento sucessório","Holding familiar"]),
- ("imobiliario","home","Direito Imobiliário","Segurança jurídica em compra, venda, locação e regularização de imóveis.",
-  ["Análise de documentação e due diligence","Compra e venda e financiamentos","Locação e despejo","Regularização e registro","Condomínios e incorporações"]),
- ("tributario","coins","Direito Tributário","Planejamento tributário e defesa do contribuinte em âmbito administrativo e judicial.",
-  ["Planejamento tributário","Recuperação de tributos pagos indevidamente","Defesas em autuações fiscais","Execuções fiscais","Consultoria em tributos"]),
- ("previdenciario","shield","Direito Previdenciário","Orientação para a obtenção e revisão de benefícios junto ao INSS.",
-  ["Aposentadorias","Benefício por incapacidade e BPC/LOAS","Pensão por morte","Revisões de benefício","Planejamento previdenciário"]),
- ("contratos","file","Contratos e Consultoria","Consultoria jurídica contínua e pareceres para decisões seguras.",
-  ["Pareceres e opiniões legais","Consultoria jurídica mensal","Adequação à LGPD","Negociação e mediação","Arbitragem"]),
+ ("civil","scale","Direito Civil","Contratos, responsabilidade civil, indenizações, direito do consumidor e demais questões do dia a dia, na consultoria e no contencioso.",
+  ["Elaboração e revisão de contratos","Responsabilidade civil e indenizações","Cobranças e execuções","Direito do consumidor","Direito imobiliário e posse","Família e sucessões"]),
+ ("tributario","coins","Direito Tributário","Planejamento tributário e defesa do contribuinte em âmbito administrativo e judicial, para empresas e pessoas físicas.",
+  ["Planejamento tributário","Recuperação de tributos pagos indevidamente","Defesas em autuações fiscais","Execuções fiscais","Consultoria em tributos federais, estaduais e municipais","Contencioso administrativo (CARF e esferas locais)"]),
+ ("empresarial","briefcase","Direito Empresarial","Assessoria jurídica preventiva e contenciosa para empresas e empreendedores, da abertura à reestruturação.",
+  ["Constituição e alteração de sociedades","Contratos empresariais e societários","Recuperação judicial e falência","Propriedade intelectual e marcas","Compliance, governança e LGPD","Planejamento societário e sucessório"]),
 ]
 
 NAV = [("index.html","Início"),("sobre.html","O Escritório"),("areas.html","Áreas de Atuação"),("equipe.html","Equipe"),("artigos.html","Artigos"),("contato.html","Contato")]
@@ -133,7 +123,7 @@ pages = {}
 # ---------------- INDEX ----------------
 area_cards = "".join(
  f'<a class="card reveal" href="areas.html#{k}"><div class="ico">{ico(i)}</div><h3>{n}</h3><p>{d}</p><span class="more">Saiba mais →</span></a>'
- for k,i,n,d,_ in AREAS[:6])
+ for k,i,n,d,_ in AREAS)
 hero = f'''<div class="hero"><div class="wrap">
 <div><span class="eyebrow" style="color:var(--gold-2)">Sociedade de Advogados</span>
 <h1>Advocacia com <em>rigor técnico</em> e atenção a cada pessoa</h1>
@@ -144,9 +134,9 @@ hero = f'''<div class="hero"><div class="wrap">
 </div></div>'''
 body = f'''
 <section><div class="wrap"><div class="head center reveal"><span class="eyebrow">Áreas de atuação</span><h2>Soluções jurídicas para cada necessidade</h2>
-<p class="muted">Atuamos de forma consultiva e contenciosa, com visão estratégica para prevenir conflitos e resolvê-los com eficiência.</p></div>
+<p class="muted">Atuamos em três frentes, de forma consultiva e contenciosa, com visão estratégica para prevenir conflitos e resolvê-los com eficiência.</p></div>
 <div class="grid g3">{area_cards}</div>
-<p style="text-align:center;margin-top:2.5rem"><a class="btn dark" href="areas.html">Ver todas as áreas</a></p></div></section>
+<p style="text-align:center;margin-top:2.5rem"><a class="btn dark" href="areas.html">Ver detalhes das áreas</a></p></div></section>
 
 <section class="alt"><div class="wrap split">
 <div class="reveal"><span class="eyebrow">O escritório</span><h2>Tradição na técnica, modernidade no atendimento</h2>
@@ -174,7 +164,7 @@ body = f'''
 </div></div></section>
 {CTA}'''
 pages["index.html"] = layout("index.html","Trigo Advogados – Advocacia com rigor técnico e atenção a cada pessoa",
- "Trigo Advogados: sociedade de advogados com atuação em Direito Civil, Empresarial, Trabalhista, Família, Imobiliário, Tributário e Previdenciário.",body,hero)
+ "Trigo Advogados: sociedade de advogados com atuação em Direito Civil, Tributário e Empresarial.",body,hero)
 
 # ---------------- SOBRE ----------------
 body = f'''
@@ -191,8 +181,8 @@ body = f'''
 <div class="card reveal"><div class="ico">{ico("users")}</div><h3>Atendimento humano</h3><p>Cada cliente tem um interlocutor direto e recebe informações em linguagem simples.</p></div></div></div></section>
 <section><div class="wrap"><div class="head reveal"><span class="eyebrow">Diferenciais</span><h2>Como podemos ajudar você</h2></div>
 <div class="grid g2 reveal">
-<div class="card"><h3>Pessoas físicas</h3><p>Família, sucessões, consumo, imóveis, previdência e demais questões do dia a dia, com sensibilidade e discrição.</p></div>
-<div class="card"><h3>Empresas e empreendedores</h3><p>Consultoria preventiva, contratos, relações de trabalho, tributos e contencioso estratégico.</p></div></div></div></section>
+<div class="card"><h3>Pessoas físicas</h3><p>Questões cíveis, como contratos, consumo, imóveis, família e sucessões, e demandas tributárias, com sensibilidade e discrição.</p></div>
+<div class="card"><h3>Empresas e empreendedores</h3><p>Estruturação societária, contratos, planejamento e defesa tributária e contencioso cível e empresarial estratégico.</p></div></div></div></section>
 {CTA}'''
 pages["sobre.html"] = layout("sobre.html","O Escritório","Conheça a Trigo Advogados: história, missão e princípios de uma advocacia ética, técnica e próxima do cliente.",
  body, page_hero("O Escritório","O Escritório","Ética, técnica e proximidade em cada caso."))
@@ -205,12 +195,12 @@ det = "".join(
 <a class="more" style="color:var(--gold);font-weight:600" href="contato.html">Falar sobre este tema →</a></div></article>'''
  for k,i,n,d,l in AREAS)
 body = f'<section style="padding-top:3rem"><div class="wrap"><ul class="chips">{chips}</ul>{det}</div></section>{CTA}'
-pages["areas.html"] = layout("areas.html","Áreas de Atuação","Direito Civil, Empresarial, Trabalhista, Família e Sucessões, Imobiliário, Tributário, Previdenciário e consultoria contratual.",
- body, page_hero("Áreas de Atuação","Áreas de Atuação","Atuação multidisciplinar, consultiva e contenciosa."))
+pages["areas.html"] = layout("areas.html","Áreas de Atuação","Direito Civil, Tributário e Empresarial: consultoria preventiva e atuação contenciosa.",
+ body, page_hero("Áreas de Atuação","Áreas de Atuação","Três áreas, com atuação consultiva e contenciosa."))
 
 # ---------------- EQUIPE ----------------
-team = [("SF","Sócio(a) Fundador(a)","Direito Civil e Empresarial"),("SA","Sócio(a)","Direito Trabalhista e Previdenciário"),
-        ("AS","Advogado(a) Associado(a)","Família e Sucessões"),("AI","Advogado(a) Associado(a)","Imobiliário e Tributário")]
+team = [("SF","Sócio(a) Fundador(a)","Direito Empresarial"),("SA","Sócio(a)","Direito Tributário"),
+        ("AS","Advogado(a) Associado(a)","Direito Civil"),("AI","Advogado(a) Associado(a)","Tributário e Empresarial")]
 cards = "".join(f'<div class="card person reveal"><div class="avatar">{ini}</div><h3>Nome do(a) Advogado(a)</h3><div class="role">{r}</div><p style="margin:.5rem 0">{a}</p><p class="oab">OAB/UF nº 000.000</p></div>' for ini,r,a in team)
 body = f'''<section><div class="wrap"><div class="head center reveal"><span class="eyebrow">Profissionais</span><h2>Advogados dedicados ao seu caso</h2><p class="muted">Uma equipe com formação sólida e atuação integrada, para oferecer visão completa de cada demanda.</p></div>
 <div class="grid g4">{cards}</div></div></section>{CTA}'''
@@ -222,10 +212,10 @@ arts = [
   ["Assinar um contrato sem lê-lo por inteiro é uma das causas mais comuns de litígios. Antes de firmar qualquer acordo, vale observar alguns pontos.",
    "<b>1. Identificação das partes.</b> Confira nomes, CPF/CNPJ e poderes de quem assina. <b>2. Objeto e prazo.</b> O que exatamente será entregue, quando e por quanto tempo vale. <b>3. Valores e reajustes.</b> Forma de pagamento, índice de correção e multas. <b>4. Rescisão.</b> Condições para encerrar o contrato e eventuais penalidades. <b>5. Foro e resolução de conflitos.</b> Onde e como eventuais disputas serão resolvidas.",
    "Em caso de dúvida, a análise prévia por um advogado costuma ser mais simples e econômica do que a solução do conflito depois de instaurado."]),
- ("inventario-extrajudicial","Família e Sucessões","Inventário extrajudicial: quando é possível?","Entenda as condições para fazer em cartório.",
-  ["O inventário pode ser feito em cartório, de forma mais ágil, quando todos os herdeiros são maiores e capazes, estão de acordo quanto à partilha e não há testamento (em regra, ou quando autorizado judicialmente).",
-   "É obrigatória a presença de advogado, e é preciso reunir certidões, documentos dos bens e comprovante do recolhimento do imposto de transmissão (ITCMD). A via extrajudicial costuma reduzir tempo e custos, mas cada caso exige análise individual.",
-   "Havendo herdeiro incapaz ou discordância, o inventário deve seguir pela via judicial."]),
+ ("recuperacao-tributos","Tributário","Pagou tributo a mais? Veja quando é possível pedir de volta","Nem toda cobrança indevida é percebida.",
+  ["Empresas e pessoas físicas podem ter recolhido tributos acima do devido, seja por interpretação equivocada da legislação, seja por mudança de entendimento dos tribunais.",
+   "Em geral, o primeiro passo é revisar os recolhimentos dos últimos cinco anos, prazo comum de prescrição para a restituição ou compensação. A partir da análise, avalia-se a via mais adequada: administrativa ou judicial.",
+   "Cada situação depende do regime tributário, da documentação e da jurisprudência aplicável, por isso a análise individual por um advogado é indispensável."]),
  ("lgpd-empresas","Empresarial","LGPD: por onde a sua empresa deve começar","Primeiros passos para a adequação.",
   ["A Lei Geral de Proteção de Dados (Lei nº 13.709/2018) alcança qualquer empresa que trate dados pessoais, de clientes, colaboradores ou fornecedores.",
    "Os passos iniciais incluem: mapear quais dados são coletados e para quê; definir a base legal de cada tratamento; revisar contratos e políticas de privacidade; implementar medidas de segurança; e indicar um encarregado (DPO).",
