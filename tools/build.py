@@ -11,9 +11,9 @@ CONFIG = dict(
     nome="Trigo Advogados",
     site="https://www.trigoadvogados.com.br",
     email="contato@trigoadvogados.com.br",
-    telefone="(11) 0000-0000",
-    tel_link="+551100000000",
-    whatsapp="5511900000000",          # DDI+DDD+número, só dígitos
+    telefone="(11) 97466-1004",
+    tel_link="+5511974661004",
+    whatsapp="5511974661004",          # DDI+DDD+número, só dígitos
     endereco="Rua Exemplo, 000 – Sala 00, Centro",
     cidade="São Paulo – SP",
     cep="00000-000",
@@ -115,7 +115,7 @@ def layout(fname, title, desc, body, hero="", ld=""):
 <p class="oab-note">Este site tem caráter exclusivamente informativo, nos termos do Provimento nº 205/2021 do Conselho Federal da OAB, e não constitui oferta de serviços, promessa de resultado ou aconselhamento jurídico. Resultados dependem das particularidades de cada caso.</p>
 <div class="legal"><span>© <span id="y">2026</span> {C["nome"]} · Sociedade de Advogados · {C["oab_sociedade"]}</span><span><a href="privacidade.html">Política de Privacidade</a></span></div>
 </div></footer>
-<a class="wa" href="https://wa.me/{C["whatsapp"]}" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">{WA_SVG}</a>
+<a class="wa" href="https://wa.me/{C["whatsapp"]}?text=Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">{WA_SVG}</a>
 <div class="cookie" role="dialog" aria-label="Aviso de cookies"><p style="margin:0">Utilizamos apenas cookies essenciais para o funcionamento do site. Saiba mais na <a href="privacidade.html">Política de Privacidade</a>.</p><button class="btn" id="cookie-ok">Entendi</button></div>
 <script>window.TRIGO={{whatsapp:"{C["whatsapp"]}",email:"{C["email"]}"}};document.getElementById("y").textContent=new Date().getFullYear()</script>
 <script src="assets/main.js" defer></script>
