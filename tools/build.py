@@ -69,10 +69,10 @@ def layout(fname, title, desc, body, hero="", ld=""):
 <title>{E(full_title)}</title>
 <meta name="description" content="{E(desc)}">
 <link rel="canonical" href="{url}">
-<meta name="theme-color" content="#0f1d33">
+<meta name="theme-color" content="#0b1f3a">
 <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="{E(full_title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="{E(full_title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{C["site"]}/assets/logo.png">
+<link rel="icon" href="assets/favicon.png" type="image/png"><link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
@@ -82,7 +82,7 @@ def layout(fname, title, desc, body, hero="", ld=""):
 <a class="skip" href="#main">Pular para o conteúdo</a>
 <div class="topbar"><div class="wrap"><span>{C["horario"]}</span><span><a href="tel:{C["tel_link"]}">{C["telefone"]}</a> · <a href="mailto:{C["email"]}">{C["email"]}</a></span></div></div>
 <header class="site"><div class="wrap nav">
-<a class="brand" href="index.html" aria-label="{C["nome"]} – página inicial"><span class="mark">T</span><span><b>TRIGO</b><small>Advogados</small></span></a>
+<a class="brand" href="index.html" aria-label="{C["nome"]} – página inicial"><img src="assets/logo.png" alt="Trigo Advogados" width="540" height="470"></a>
 <button class="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <ul class="menu">{nav}<li><a class="btn" href="contato.html">Fale conosco</a></li></ul>
 </div></header>
@@ -92,7 +92,7 @@ def layout(fname, title, desc, body, hero="", ld=""):
 </main>
 <footer class="site"><div class="wrap">
 <div class="fgrid">
-<div><a class="brand" href="index.html"><span class="mark">T</span><span><b>TRIGO</b><small>Advogados</small></span></a>
+<div><a class="brand footlogo" href="index.html" aria-label="{C["nome"]} – página inicial"><img src="assets/logo.png" alt="Trigo Advogados" width="540" height="470" loading="lazy"></a>
 <p style="margin-top:1.2rem">Advocacia pautada pela ética, pela técnica e pelo compromisso com cada cliente.</p></div>
 <div><h4>Navegação</h4><ul>{"".join(f'<li><a href="{h}">{t}</a></li>' for h,t in NAV)}</ul></div>
 <div><h4>Áreas</h4><ul>{footer_areas}</ul></div>

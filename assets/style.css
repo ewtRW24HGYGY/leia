@@ -1,4 +1,4 @@
-:root{--navy:#0f1d33;--navy-2:#16294a;--gold:#b8924a;--gold-2:#d4b06a;--ink:#1b2433;--muted:#5b6678;--line:#e4e0d6;--bg:#fbf9f4;--card:#fff;--radius:10px;--shadow:0 10px 30px rgba(15,29,51,.08);--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+:root{--navy:#0b1f3a;--navy-2:#14305a;--gold:#b8924a;--gold-2:#d4b06a;--ink:#1b2433;--muted:#5b6678;--line:#e4e0d6;--bg:#fbf9f4;--card:#fff;--radius:10px;--shadow:0 10px 30px rgba(15,29,51,.08);--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px}
 img,svg{max-width:100%;display:block}a{color:inherit}
@@ -110,3 +110,13 @@ footer .brand b{color:#fff}footer .brand .mark{color:#fff}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 .prose{max-width:760px}.prose h2{font-size:1.9rem;margin-top:2.2rem}.prose li{margin-bottom:.4rem}
 @media print{.topbar,header.site,.wa,.cookie,.band,footer{display:none}}
+
+/* logo no cabeçalho escuro */
+.topbar{background:#071528}
+header.site{background:var(--navy);border-bottom:1px solid rgba(212,176,106,.35)}
+.brand img{height:104px;width:auto;margin:-4px 0}
+.nav{padding:.35rem 0}
+.menu a{color:#e6eaf3}.menu a:hover,.menu a[aria-current=page]{color:#fff}
+.burger span{background:#fff}
+@media(max-width:900px){.menu{background:var(--navy);border-bottom:1px solid rgba(212,176,106,.35)}.menu li a{border-bottom-color:rgba(255,255,255,.12)}.brand img{height:84px}}
+footer .brand.footlogo img{height:150px}
