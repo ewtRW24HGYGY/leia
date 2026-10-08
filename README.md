@@ -13,3 +13,10 @@ As páginas HTML são regeneradas na raiz. Para publicar, hospede a pasta em qua
 - Telefone, e-mail, endereço, CEP, nº OAB, domínio (`site`)
 - Nomes, fotos e OAB dos advogados em `equipe.html` (via `tools/build.py`)
 - Embed do Google Maps em Contato
+
+## Publicação gratuita
+**GitHub Pages:** Settings → Pages → Source: *GitHub Actions*. O workflow `.github/workflows/pages.yml` publica a cada push na `main` em `https://<usuario>.github.io/leia/`.
+
+**Cloudflare Pages:** Workers & Pages → Create → Pages → Connect to Git → repositório `leia`. Framework: *None*; build command: vazio; output directory: `/`. Endereço gratuito: `https://<projeto>.pages.dev`.
+
+Depois de definir o endereço final, atualize `site` em `tools/build.py` e rode `python3 tools/build.py` (canonical, sitemap e robots).
