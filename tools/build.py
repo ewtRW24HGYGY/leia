@@ -16,7 +16,7 @@ CONFIG = dict(
     whatsapp="5511974661004",          # DDI+DDD+número, só dígitos
     endereco="Rua Exemplo, 000 – Sala 00, Centro",
     cidade="São Paulo",
-    local="Localizados em São Paulo",
+    local="Vila Olímpia, São Paulo – SP",
     cep="00000-000",
     horario="Segunda a sexta, das 9h às 18h",
     oab_sociedade="OAB/SP nº 00.000",  # registro da sociedade
@@ -246,7 +246,8 @@ body = f'''<section><div class="wrap split" style="align-items:start">
 <div>{ico("phone")}<span><b>Telefone</b><a href="tel:{C["tel_link"]}">{C["telefone"]}</a></span></div>
 <div>{ico("mail")}<span><b>E-mail</b><a href="mailto:{C["email"]}">{C["email"]}</a></span></div>
 <div>{ico("clock")}<span><b>Horário</b>{C["horario"]}</span></div></div>
-<div class="map" style="margin-top:2rem" role="img" aria-label="Espaço reservado para o mapa">Mapa de localização<br>(insira aqui o embed do Google Maps)</div></div>
+<div class="map" style="margin-top:2rem;padding:0;overflow:hidden"><iframe title="Mapa: Vila Olímpia, São Paulo" src="https://www.google.com/maps?q=Vila+Ol%C3%ADmpia,+S%C3%A3o+Paulo,+SP&amp;hl=pt-BR&amp;z=15&amp;output=embed" width="100%" height="320" style="border:0;display:block" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+<p style="margin-top:.8rem"><a class="more" style="color:var(--gold);font-weight:600" href="https://www.google.com/maps/search/?api=1&amp;query=Vila+Ol%C3%ADmpia%2C+S%C3%A3o+Paulo%2C+SP" target="_blank" rel="noopener">Abrir no Google Maps →</a></p></div>
 </div></section>'''
 pages["contato.html"] = layout("contato.html","Contato","Entre em contato com a Trigo Advogados e agende um atendimento presencial ou on-line.",body,page_hero("Contato","Contato","Estamos à disposição para ouvir você."))
 
