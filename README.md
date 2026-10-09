@@ -15,7 +15,7 @@ As páginas HTML são regeneradas na raiz. Para publicar, hospede a pasta em qua
 - Embed do Google Maps em Contato
 
 ## Publicação gratuita
-**GitHub Pages:** Settings → Pages → Source: *GitHub Actions*. O workflow `.github/workflows/pages.yml` publica a cada push na `main` em `https://<usuario>.github.io/leia/`.
+**GitHub Pages:** o workflow `.github/workflows/pages.yml` publica o site na branch `gh-pages` a cada push na `main`. Em Settings → Pages, escolha *Deploy from a branch* → `gh-pages` / `(root)`. Endereço: `https://<usuario>.github.io/leia/`.
 
 **Cloudflare Pages:** Workers & Pages → Create → Pages → Connect to Git → repositório `leia`. Framework: *None*; build command: vazio; output directory: `/`. Endereço gratuito: `https://<projeto>.pages.dev`.
 
