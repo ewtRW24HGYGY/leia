@@ -200,12 +200,13 @@ pages["areas.html"] = layout("areas.html","Áreas de Atuação","Direito Civil, 
  body, page_hero("Áreas de Atuação","Áreas de Atuação","Três áreas, com atuação consultiva e contenciosa."))
 
 # ---------------- EQUIPE ----------------
-team = [("SF","Sócio(a) Fundador(a)","Direito Empresarial"),("SA","Sócio(a)","Direito Tributário"),
-        ("AS","Advogado(a) Associado(a)","Direito Civil"),("AI","Advogado(a) Associado(a)","Tributário e Empresarial")]
-cards = "".join(f'<div class="card person reveal"><div class="avatar">{ini}</div><h3>Nome do(a) Advogado(a)</h3><div class="role">{r}</div><p style="margin:.5rem 0">{a}</p><p class="oab">OAB/UF nº 000.000</p></div>' for ini,r,a in team)
-body = f'''<section><div class="wrap"><div class="head center reveal"><span class="eyebrow">Profissionais</span><h2>Advogados dedicados ao seu caso</h2><p class="muted">Uma equipe com formação sólida e atuação integrada, para oferecer visão completa de cada demanda.</p></div>
-<div class="grid g4">{cards}</div></div></section>{CTA}'''
-pages["equipe.html"] = layout("equipe.html","Equipe","Conheça os advogados da Trigo Advogados.",body,page_hero("Equipe","Nossa Equipe","Profissionais comprometidos com a excelência jurídica."))
+body = f'''<section><div class="wrap"><div class="head reveal"><span class="eyebrow">Equipe</span><h2>Quem está à frente do escritório</h2></div>
+<article class="founder reveal"><img src="assets/cristina-trigo.jpg" alt="Cristina Trigo, advogada fundadora da Trigo Advogados" width="600" height="600" loading="lazy">
+<div><span class="role">Fundadora</span><h3>Cristina Trigo</h3><p class="oab">Advogada</p>
+<p>Advogada formada pela Universidade Paulista (UNIP), em 2003, com especialização em Direito Civil pelo Instituto Presbiteriano Mackenzie.</p>
+<p>Atua nas áreas consultiva e contenciosa, com foco em matérias de Direito Civil e Tributário.</p>
+<a class="btn dark" href="contato.html">Falar com a Dra. Cristina</a></div></article></div></section>{CTA}'''
+pages["equipe.html"] = layout("equipe.html","Equipe","Conheça Cristina Trigo, advogada fundadora da Trigo Advogados, com atuação em Direito Civil e Tributário.",body,page_hero("Equipe","Nossa Equipe","Atuação consultiva e contenciosa com foco em Direito Civil e Tributário."))
 
 # ---------------- ARTIGOS ----------------
 arts = [
